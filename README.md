@@ -36,7 +36,7 @@
   - Oracle SQL é pareciso, mas não é identico ao SQL ANSI;
   - A maioria dos comandos mesmo em Oracle SQL são ANSI;
 
-## Commandos SQL
+## Comandos SQL
   **Data Manipulation Language(DML):**
   - SELECT: Recuperar dados;
   - INSERT: Inserir linhas numa tabela;
@@ -60,3 +60,52 @@
   - COMMIT: Efetiva uma transação, e ela não poderá mais ser desfeita;
   - ROLLBACK: Desfaz a transação;
   - SAVEPOINT: Cria um ponto de controle na transação;
+
+## Comando SELECT:
+  - Comando DESCRIBE: Exibir a estrutura de uma tabela
+    - Não é um comando SQL, é um comando do SQL Plus, e do SQL developer
+    - DESC[RIBE] tabela;
+      ~~~SQL
+        DESCRIBE employees;
+
+        DESC departaments;
+      ~~~
+  - Entender as capacidades do comando SELECT:
+  - Executar um comando SELET básico:
+    ~~~SQL
+      SELECT *|{[DISTINCT] coluna|expressão [alias],...}
+      FROM tabela;
+
+      SELECT *
+      FROM departaments;
+
+      SELECT departament_id, location_id,
+      FROM departaments;
+
+      SELECT
+        job_id
+        job_title
+      FROM
+        jobs;
+    ~~~
+    - SELECT identifica as colunas ou expressões a serem exibidas;
+    - FROM indentifica as tabelas que contém as colunas;
+  - Utilizar espressões aritméticas:
+  - Entender o valor NULL;
+  - Definir Alias de Coluna:
+  - Utilizar strings de cartacteres:
+  - Utilizar operador de concatenação:
+  - Utilizar o Operador alternativo para áspas:
+  - Enternder o uso de DISTINCT:
+  - Como o comando SELECT podemos fazer:
+    - **Projection**: selecionar Colunas;
+    - **Selection**: selecionar as linhas:
+    - **Join**: usar colunas de mais de uma tabela
+ 
+  **Escrevendo comandos SQL:**
+  - Comandos SQL não são case sensitivos;
+  - Comandos SQL podem se extender por uma ou mais linhas;
+  - Palavras chave(Keywords) não podem ser abreviatuas ou divididas através das linhas;
+  - Clausulas são normalmente colocadas em linhas separadas;
+  - Identação são utilizadas para facilitar o entendimento do comando;
+  - Comandos SQL são terminados por ponto e virgula(;);
