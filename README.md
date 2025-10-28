@@ -65,12 +65,11 @@
   - Comando DESCRIBE: Exibir a estrutura de uma tabela
     - Não é um comando SQL, é um comando do SQL Plus, e do SQL developer
     - DESC[RIBE] tabela;
-      ~~~SQL
-        DESCRIBE employees;
+    ~~~SQL
+      DESCRIBE employees;
 
-        DESC departaments;
-      ~~~
-  - Entender as capacidades do comando SELECT:
+      DESC departaments;
+    ~~~
   - Executar um comando SELET básico:
     ~~~SQL
       SELECT *|{[DISTINCT] coluna|expressão [alias],...}
@@ -90,8 +89,6 @@
     ~~~
     - SELECT identifica as colunas ou expressões a serem exibidas;
     - FROM indentifica as tabelas que contém as colunas;
-  - Utilizar espressões aritméticas:
-  - Entender o valor NULL;
   - Definir Alias de Coluna:
   - Utilizar strings de cartacteres:
   - Utilizar operador de concatenação:
@@ -105,7 +102,46 @@
   **Escrevendo comandos SQL:**
   - Comandos SQL não são case sensitivos;
   - Comandos SQL podem se extender por uma ou mais linhas;
-  - Palavras chave(Keywords) não podem ser abreviatuas ou divididas através das linhas;
+  - Palavras chave(Keywords) **não podem ser abreviadas** ou divididas através das linhas;
   - Clausulas são normalmente colocadas em linhas separadas;
   - Identação são utilizadas para facilitar o entendimento do comando;
-  - Comandos SQL são terminados por ponto e virgula(;);
+  - Comandos SQL são terminados por ponto e virgula(;), mas no developer não tem essa necessidade, mas se tiver o **;** ele vai sabe que se o cursor estiver na frente ele sabe qual o comando que tem que rodar sem precisar selecionar;
+
+  **Alinhamento de colunas em cabeçalhos:**
+  - **Colunas Chacaracter e Date** o alinhamento default do cabeçalho: Esquerda;
+  - **Colunas Number** o alinhamento: Direita;
+  - **Exibição default do cabeçalho**: Letras maiúsculas;
+
+  **Expressões Aritiméticas:
+  - Pode-se criar expressões aritiméticas com números e datas utilizando operadores aritméticos:
+    | Operador  | Descrição |
+    | ------------- | ------------- |
+    | + | Adição  |
+    | - | Subtração  |
+    | * | Multiplicação  |
+    | - | Divisão  |
+    ~~~SQL
+      SELECT first_name, last_name, salary,
+      salary * 1.5
+      FROM employess;
+    ~~~
+    - Nesse exemplo ele retorna as 3 colunas, e a coluna salário é multiplicada por 1,5;
+   
+  **Regras de procedência de operadores:
+  - Mesmas regras de precedência da matematica:
+    - 1. Identidade(positivo ou negativo);
+    - 2. Multiplicação e divisão (possuem a mesma procedência, resolvendo da esquerda para a direita);
+    - 3. Soma e subtração (possuem a mesma procedência, resolvendo da esquerda para a direita);
+   ~~~SQL
+    SELECT first_name, last_name, salary,
+    salary + 100 * 1.5
+    FROM employess;
+  ~~~
+  - Nesse caso ele faz a multiplicação antes e depois a a soma com o salário;
+  - Para mudar a precedência é necessário utilizar parenteses **()**;
+  ~~~SQL
+    SELECT first_name, last_name, salary,
+    (salary + 100) * 1.5
+    FROM employess;
+  ~~~
+  - Nesse caso ele soma primeiro e depois faz a multiplicação;
