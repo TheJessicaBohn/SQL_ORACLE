@@ -89,7 +89,6 @@
     ~~~
     - SELECT identifica as colunas ou expressões a serem exibidas;
     - FROM indentifica as tabelas que contém as colunas;
-  - Definir Alias de Coluna:
   - Utilizar strings de cartacteres:
   - Utilizar operador de concatenação:
   - Utilizar o Operador alternativo para áspas:
@@ -156,4 +155,37 @@
     salary, commission_pct
     FROM employess;
   ~~~
-  - O SQL retona ```null```;
+  - O SQL retona ```(null)```;
+
+**Utilizando valores nulos em expressões aritméticas:**
+  - Qualquer expressão aritmética utilizando NULL retorna Null;
+   ~~~SQL
+    SELECT first_name, last_name, job_id,
+    salary, commission_pct, commission_pct * 1000
+    FROM employess
+    WHERE commission_pct IS NULL;
+  ~~~
+  - Então:
+    - 10 + NULL = NULL;
+    - 10 - NULL = NULL;
+    - 10 * NULL = NULL;
+    - 10 / NULL = NULL;
+
+**Alias de Coluna:**
+  - Renomeia o cabeçalho da coluna;
+  - Segue Imediamente o nome da coluna;
+  - Opcionalmente pode ser utilizado a palavra chave ```AS``` entre as colunas e o alias;
+  - Quando o alias contém espaços, caracteres especias ou for case sensitive(letras maiusculas)então se deve ser colocado entre aspas duplas("");
+   ~~~SQL
+    SELECT first_name AS "Nome", last_name sobrenome, salary "salário"
+    FROM employess
+  ~~~
+
+**Operador de concatenação:**
+  - Liga colunas ou strings de caracteres com outras colunas ou strings de caractreres;
+  - É representado por duas barras verticais(||)
+  - Cria uma segunda coluna resultante da ligação que é uma string de caracteres;
+  ~~~SQL
+    SELECT first_name || ' '  ||  last_name, ', data de admissão: ' || hire_date, "Funcionário" -- alias
+    FROM employess     
+  ~~~
