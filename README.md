@@ -112,7 +112,7 @@
   - **Colunas Number** o alinhamento: Direita;
   - **Exibição default do cabeçalho**: Letras maiúsculas;
 
-  **Expressões Aritiméticas:
+  **Expressões Aritiméticas:**
   - Pode-se criar expressões aritiméticas com números e datas utilizando operadores aritméticos:
     | Operador  | Descrição |
     | ------------- | ------------- |
@@ -127,7 +127,7 @@
     ~~~
     - Nesse exemplo ele retorna as 3 colunas, e a coluna salário é multiplicada por 1,5;
    
-  **Regras de procedência de operadores:
+  **Regras de procedência de operadores:**
   - Mesmas regras de precedência da matematica:
     - 1. Identidade(positivo ou negativo);
     - 2. Multiplicação e divisão (possuem a mesma procedência, resolvendo da esquerda para a direita);
@@ -145,3 +145,15 @@
     FROM employess;
   ~~~
   - Nesse caso ele soma primeiro e depois faz a multiplicação;
+
+**Entendendo o valor nulo (NULL):**
+  - Null é ausência de valorç
+  - Null não é zero;
+  - Null não é espaços em branco;
+  - Null não zeros binários;
+  ~~~SQL
+    SELECT first_name, last_name, job_id,
+    salary, commission_pct
+    FROM employess;
+  ~~~
+  - O SQL retona ```null```;
