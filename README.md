@@ -189,3 +189,36 @@
     SELECT first_name || ' '  ||  last_name, ', data de admissão: ' || hire_date, "Funcionário" -- alias
     FROM employess     
   ~~~
+
+**Strings de Caracteres:**
+  - Um Literal é um caracter, um número, ou uma string  que é incluída em um comando SELECT;
+  - Literais de datas e  caracteres devem ser definidos entre aspas simples('');
+  - Cada Literal ou string será exibido uma vez para cada linha retornada;
+
+**Operador alternativo para aspas:**
+  - Você pode especificar seu próprio operador alternativo para aspas;
+  - Escolha qualquer delimitador;
+  - Facilita a legibilidade e usabilidade;
+  - q é quot que é aspas em inglês;
+  - Nesse caso tem que usar ```AS``` para não dar conflito de aspas
+  ~~~SQL
+    SELECT departament_name || q' [ Departament's Manager Id: ]' ||  manager_id AS "Departamento e Gerente"
+    FROM departaments;
+  ~~~
+
+**Linhas duplicadas:**
+  - Por default as consultas exibem todas as linhas retornadas, incluindo as linhas duplicadas.
+   ~~~SQL
+    SELECT departament_id
+    FROM employees;
+   ~~~
+  - Esse tipo de retorno vão trazer muitos empregados com ID de departamento duplicadosç;
+  - Para trazer o valor de cada departamento uma vez só: com o uso da clausula ```DISTINCT```
+   ~~~SQL
+    SELECT DISTINCT departament_id
+    FROM employees;
+
+    SELECT DISTINCT last_name, first_name -- aqui o distinct é pra query toda
+    FROM employees;
+    
+   ~~~
