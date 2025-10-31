@@ -317,7 +317,7 @@
     WHERE manager_id = NULL;
   ~~~
   - E para resolver:
-    ~~~SQL
+  ~~~SQL
     SELECT last_name, manager_id
     FROM employees
     WHERE manager_id IS NULL;
