@@ -218,4 +218,49 @@
     FROM employees;
    ~~~
 
+## Restringindo e ordenando dados:
+
+**Restringindo as linhas que serão retornadas:**
+  - Selecione as linhas que serão retornadas utilisando a cláusula ```WHERE```;
+  ~~~SQL
+    SELECT *|{[DISTINCT] coluna|expressão [alias], ...}
+    FROM tabela
+    [WHERE condição(s)];
+  ~~~
+  ~~~SQL
+    SELECT employee_id, last_name, job_id, departament_id
+    FROM employees
+    WHERE departament_id = 60;
+  ~~~
+
+**Strings de caractreres e datas:**
+  - Strings de caracteres e datas são delimitados por aspas simples('');
+  - Valores de strings de caracteres são case sensitivos;
+  - Valores de strings de data são sensitivos ao formato definido para o banco de dados ou para a sessão;
+  - O format default para  a exibição de datas mais utilizado no Brasil é ```'DD/MM/YY'```ou ```'DD/MM/RR'```
+  ~~~SQL
+    SELECT first_name last_name, job_id, departament_id, hire_date
+    FROM employees
+    WHERE last_name = 'King';
+  ~~~
+  ~~~SQL
+    SELECT first_name last_name, job_id, departament_id, hire_date
+    FROM employees
+    WHERE hire_date = '30/01/04';
+  ~~~
+  | Operador  | Descrição |
+  | ------------- | ------------- |
+  | = | Igual a |
+  | > | Maior que |
+  | >= | Maior ou igual |
+  | < | Menor que  |
+  | <= | Menor ou igual  |
+  | <> | diferente |
+  | BETWEEN ... AND ... | Entre dois valores |
+  | IN(set) | Corresponder a qualquer um dos valores de uma lista |
+  | LIKE | corresponder a um padrão de caractere |
+  | IS NULL | Valor igual a nulo |
+
+
+
 
