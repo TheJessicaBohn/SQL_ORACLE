@@ -89,10 +89,6 @@
     ~~~
     - SELECT identifica as colunas ou expressões a serem exibidas;
     - FROM indentifica as tabelas que contém as colunas;
-  - Utilizar strings de cartacteres:
-  - Utilizar operador de concatenação:
-  - Utilizar o Operador alternativo para áspas:
-  - Enternder o uso de DISTINCT:
   - Como o comando SELECT podemos fazer:
     - **Projection**: selecionar Colunas;
     - **Selection**: selecionar as linhas:
@@ -220,5 +216,6 @@
 
     SELECT DISTINCT last_name, first_name -- aqui o distinct é pra query toda
     FROM employees;
-    
    ~~~
+
+
