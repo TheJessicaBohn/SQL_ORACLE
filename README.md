@@ -293,4 +293,32 @@
     WHERE first_name LIKE 'Sa%'; -- no caso o a é seguido de qualquer coisa
   ~~~
 
-  
+**Combinando o uso de vários caracteres curinga:**
+  - Exemplo com segunda letra:
+  ~~~SQL
+    SELECT first_name, last_name
+    FROM employees
+    WHERE last_name LIKE '_a%'; -- o _ significa um caracter qualquer seguido de a e %(n caracteres quaisquer)
+  ~~~
+  - Exemplo com ultima letra:
+   ~~~SQL
+    SELECT first_name, last_name
+    FROM employees
+    WHERE last_name LIKE '%a'; -- o _ significa um caracter qualquer seguido de a e %(n caracteres quaisquer)
+  ~~~
+
+**Comparações com valor nulo:**
+  - Qualquer comparação com valor NULL retona o booleano NULL;
+  - Para podermos verificar se um valor é NULL deve ser utilizado a expressão IS NULL
+  - Nessa pesquisa a seguir não retorna nada:
+  ~~~SQL
+    SELECT last_name, manager_id
+    FROM employees
+    WHERE manager_id = NULL;
+  ~~~
+  - E para resolver:
+    ~~~SQL
+    SELECT last_name, manager_id
+    FROM employees
+    WHERE manager_id IS NULL;
+  ~~~
